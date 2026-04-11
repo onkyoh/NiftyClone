@@ -1,12 +1,16 @@
 {
   "name": "Acme Plumbing",
   "box": {
-    "x": 100,
-    "y": 200,
-    "width": 400,
-    "height": 80
+    "x": 613,
+    "y": 578,
+    "width": 376,
+    "height": 204
   },
-  "font": "Caveat",
-  "color": "#ffffff",
-  "align": "center"
+  "font": "Indie Flower",
+  "align": "center",
+  "angle": 0,
+  "bg": {
+    "enabled": false,
+    "padding": 8
+  }
 }
