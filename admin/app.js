@@ -650,6 +650,7 @@
   (async () => {
     try {
       const res = await fetch("/.netlify/functions/config");
+      if (res.status === 401) { window.location.href = "/"; return; }
       if (!res.ok) throw new Error(await res.text());
       const { token, repo } = await res.json();
       GITHUB_API = `https://api.github.com/repos/${repo}/contents`;

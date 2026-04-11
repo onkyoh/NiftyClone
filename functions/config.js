@@ -1,4 +1,10 @@
-exports.handler = async () => {
+const { isAuthenticated } = require("./lib/auth");
+
+exports.handler = async (event) => {
+  if (!isAuthenticated(event)) {
+    return { statusCode: 401, body: "Unauthorized" };
+  }
+
   const token = process.env.GITHUB_TOKEN;
   const repo = process.env.GITHUB_REPO;
 
