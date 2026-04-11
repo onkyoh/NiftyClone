@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nifty — Image Personalization</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Client List Screen -->
+    <div id="screen-list" class="screen">
+      <header>
+        <h1>Nifty</h1>
+        <p>Image Personalization Admin</p>
+      </header>
+      <div class="actions">
+        <button id="btn-add-client" class="btn btn-primary">+ Add Client</button>
+      </div>
+      <div id="client-list" class="client-list">
+        <p class="loading">Loading clients...</p>
+      </div>
+    </div>
+
+    <!-- Client Editor Screen -->
+    <div id="screen-editor" class="screen hidden">
+      <header>
+        <button id="btn-back" class="btn btn-ghost">&larr; Back</button>
+        <h2 id="editor-title">Edit Client</h2>
+      </header>
+      <div class="editor-layout">
+        <div class="editor-form">
+          <div class="form-group">
+            <label for="client-name">Client Name</label>
+            <input type="text" id="client-name" placeholder="e.g. Acme Plumbing">
+          </div>
+          <div class="form-group">
+            <label for="client-slug">Slug (folder name)</label>
+            <input type="text" id="client-slug" placeholder="e.g. acme">
+          </div>
+          <div class="form-group">
+            <label>Base Image</label>
+            <div class="upload-area" id="upload-area">
+              <input type="file" id="file-input" accept="image/jpeg,image/png" hidden>
+              <p id="upload-label">Click or drag to upload base.jpg</p>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="text-angle">Rotation (degrees)</label>
+            <input type="number" id="text-angle" value="0" min="-180" max="180" step="1">
+          </div>
+          <div class="form-group">
+            <label>Text Background</label>
+            <label class="toggle-label">
+              <input type="checkbox" id="bg-enabled">
+              Enable background
+            </label>
+            <div id="bg-options" class="bg-options hidden">
+              <div class="box-inputs">
+                <div class="box-field">
+                  <label>Padding</label>
+                  <input type="number" id="bg-padding" value="8" min="0" max="200">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Bounding Box</label>
+            <div class="box-inputs">
+              <div class="box-field"><label>X</label><input type="number" id="box-x" value="0"></div>
+              <div class="box-field"><label>Y</label><input type="number" id="box-y" value="0"></div>
+              <div class="box-field"><label>W</label><input type="number" id="box-w" value="0"></div>
+              <div class="box-field"><label>H</label><input type="number" id="box-h" value="0"></div>
+            </div>
+            <p class="hint">Or draw directly on the preview canvas below</p>
+          </div>
+          <div class="form-actions">
+            <button id="btn-save" class="btn btn-primary">Save</button>
+            <button id="btn-preview" class="btn btn-secondary">Preview</button>
+            <button id="btn-delete" class="btn btn-danger hidden">Delete</button>
+          </div>
+          <div id="save-status" class="status-msg"></div>
+        </div>
+        <div class="editor-preview">
+          <label>Preview — drag to draw bounding box</label>
+          <div class="canvas-wrapper" id="canvas-wrapper">
+            <canvas id="preview-canvas"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Preview Modal -->
+  <div id="preview-modal" class="modal hidden">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Live Preview</h3>
+        <button id="btn-close-modal" class="btn btn-ghost">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="preview-name">Test Name</label>
+          <input type="text" id="preview-name" value="Sarah">
+        </div>
+        <p id="preview-status" class="preview-status"></p>
+        <img id="preview-image" src="" alt="">
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "name": "nifty-clone",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@napi-rs/canvas": "^0.1.53",
+    "node-fetch": "^2.7.0"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Acme Plumbing",
+  "box": {
+    "x": 100,
+    "y": 200,
+    "width": 400,
+    "height": 80
+  },
+  "font": "Caveat",
+  "color": "#ffffff",
+  "align": "center"
+}
