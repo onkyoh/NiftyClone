@@ -1,0 +1,16 @@
+{
+  "name": "GTA Home Contracting",
+  "box": {
+    "x": 627,
+    "y": 629,
+    "width": 350,
+    "height": 117
+  },
+  "font": "Indie Flower",
+  "align": "center",
+  "angle": 0,
+  "bg": {
+    "enabled": false,
+    "padding": 8
+  }
+}
