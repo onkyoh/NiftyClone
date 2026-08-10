@@ -1,0 +1,16 @@
+{
+  "name": "Onkyoh Web Designs",
+  "box": {
+    "x": 268,
+    "y": 524,
+    "width": 592,
+    "height": 253
+  },
+  "font": "Indie Flower",
+  "align": "center",
+  "angle": 0,
+  "bg": {
+    "enabled": false,
+    "padding": 8
+  }
+}
